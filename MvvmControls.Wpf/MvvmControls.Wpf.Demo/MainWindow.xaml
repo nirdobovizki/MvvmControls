@@ -1,0 +1,29 @@
+﻿<Window x:Class="MvvmControls.Wpf.Demo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525" Name="_me">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" Grid.RowSpan="2">
+            <ItemsControl ItemsSource="{Binding}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Button Content="{Binding Name}" Command="{Binding SwitchDemoCommand, ElementName=_me}"
+                                CommandParameter="{Binding}" Height="50" Margin="2"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+        <Border Grid.Column="1" Background="Gray" >
+            <TextBlock Name="_title" Foreground="White" HorizontalAlignment="Center"/>
+        </Border>
+        <Border Name="_demo" Grid.Column="1" Grid.Row="1" BorderThickness="1" BorderBrush="Gray"/>
+    </Grid>
+</Window>

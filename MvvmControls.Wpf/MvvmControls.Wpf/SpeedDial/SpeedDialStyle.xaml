@@ -1,0 +1,62 @@
+﻿<ResourceDictionary 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:util="clr-namespace:NirDobovizki.MvvmControls.Utils"
+             xmlns:dial="clr-namespace:NirDobovizki.MvvmControls.SpeedDial"
+             mc:Ignorable="d" >
+    <Style TargetType="ProgressBar" x:Key="SpeedDial">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ProgressBar">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <util:ChangeAnimator 
+                                x:Name="Change"
+                                SourceMin="{TemplateBinding Minimum}"
+                                SourceMax="{TemplateBinding Maximum}"
+                                TargetMin="-110"
+                                TargetMax="110"
+                                SourceValue="{TemplateBinding Value}"/>
+                        <Ellipse Stroke="#a8a0a0" Grid.RowSpan="2" Fill="#4F3F3F"
+                                     StrokeThickness="3"/>
+                        <dial:SpeedDialTicks 
+                                Minimum="{TemplateBinding Minimum}"
+                                Maximum="{TemplateBinding Maximum}"
+                                MinimumAngle="{Binding ElementName=Change, Path=TargetMin}"
+                                MaximumAngle="{Binding ElementName=Change, Path=TargetMax}"
+                                Grid.RowSpan="2" Margin="9"/>
+                        <Grid Margin="15 15 15 0">
+                            <Rectangle Width="6" RenderTransformOrigin="0.5 1">
+                                <Rectangle.Fill>
+                                    <VisualBrush>
+                                        <VisualBrush.Visual>
+                                            <Path Fill="Red"
+                                                      Data="M 0 50 L 2 0 4 50 Z" VerticalAlignment="Stretch" HorizontalAlignment="Center" />
+                                        </VisualBrush.Visual>
+                                    </VisualBrush>
+                                </Rectangle.Fill>
+                                <Rectangle.RenderTransform>
+                                    <RotateTransform Angle="{Binding ElementName=Change,Path=TargetValue}" />
+                                </Rectangle.RenderTransform>
+                            </Rectangle>
+                        </Grid>
+                        <Border VerticalAlignment="Center" HorizontalAlignment="Center" 
+                                    Grid.Row="1" BorderBrush="Black" CornerRadius="3"
+                                    BorderThickness="1" Width="70" Background="#4C4343"
+                                    Padding="3">
+                            <TextBlock Text="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=Value, StringFormat=0.00}" 
+                                       Foreground="Red" FontSize="16" HorizontalAlignment="Right" FontFamily="Courier New"/>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+</ResourceDictionary>
