@@ -11,10 +11,14 @@ Reflection Control
 
 A decorator (like a border) that displays a reflection of it's child element
 
+![Reflection control image](ReflectionControl.png)
+
 Speed Dial Style
 ---
 
 A style that makes a ProgressBar control look like a car's speed dial
+
+![Speed dial style image](SpeedDialStyle.png)
 
 Licensing
 ---
