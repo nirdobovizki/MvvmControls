@@ -6,6 +6,14 @@ Currently there are two controls in the library, more will be added over the nex
 
 There is a demo app that shows how to use each control
 
+Adorners Lib
+---
+
+A set of controls that let you eaily add adorner-based popups that automatically adjust to your controls
+
+![Adorners image](Adorners.png)
+
+
 Reflection Control
 ---
 
