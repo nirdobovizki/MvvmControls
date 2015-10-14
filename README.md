@@ -14,6 +14,19 @@ A set of controls that let you eaily add adorner-based popups that automatically
 ![Adorners image](Adorners.png)
 
 
+Form Panel
+---
+
+A panel that arranges label-field pairs into a nice layout
+
+This panel arranges the child elements so that labels are all the same size and inpt fields are all the same size, with configuable spacing.
+
+It's also possible to have a control with no label (by settings FormPanel.IsStandalone="true") and have a group header that 
+spans the entire width of the panel (FormPanel.IsGroupHeader="true")
+
+![Form panel image](FormPanel.png)
+
+
 Reflection Control
 ---
 

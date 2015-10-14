@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="NirDobovizki.MvvmControls.Wpf.Demo.Demos.FormPanelDemo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:NirDobovizki.MvvmControls.Wpf.Demo.Demos"
+             xmlns:form="clr-namespace:NirDobovizki.MvvmControls.FormPanel;assembly=MvvmControls.Wpf"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Style x:Key="GroupHeader" TargetType="ContentControl">
+            <Setter Property="Focusable" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ContentControl">
+                        <Border BorderBrush="DarkBlue" BorderThickness="0 0 0 1" Margin="0 0 0 5">
+                            <ContentPresenter Content="{TemplateBinding Content}" TextBlock.Foreground="DarkBlue"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <form:FormPanel Name="panel" Margin="10" VerticalAlignment="Top">
+            <ContentControl Style="{StaticResource GroupHeader}" form:FormPanel.IsGroupHeader="True">Column Count</ContentControl>
+            <TextBlock>Column count</TextBlock>
+            <TextBox Text="{Binding ElementName=panel, Path=Columns}"/>
+            <ContentControl Style="{StaticResource GroupHeader}" form:FormPanel.IsGroupHeader="True">Spacing</ContentControl>
+            <TextBlock>Column spacing</TextBlock>
+            <TextBox Text="{Binding ElementName=panel, Path=ColumnSpacing}"/>
+            <TextBlock>Row spacing</TextBlock>
+            <TextBox Text="{Binding ElementName=panel, Path=RowSpacing}"/>
+            <TextBlock>Label-control</TextBlock>
+            <TextBox Text="{Binding ElementName=panel, Path=LabelControlSpacing}"/>
+
+            <ContentControl Style="{StaticResource GroupHeader}" form:FormPanel.IsGroupHeader="True">Calculated sizes</ContentControl>
+            <TextBlock>Label size</TextBlock>
+            <TextBox Text="{Binding ElementName=panel, Path=LabelSize, Mode=OneWay}" IsReadOnly="True"/>
+            <TextBlock>Control size</TextBlock>
+            <TextBox Text="{Binding ElementName=panel, Path=ControlSize, Mode=OneWay}" IsReadOnly="True"/>
+            <TextBlock>Pair size</TextBlock>
+            <TextBox Text="{Binding ElementName=panel, Path=LabelControlPairSize, Mode=OneWay}" IsReadOnly="True"/>
+
+            <ContentControl Style="{StaticResource GroupHeader}" form:FormPanel.IsGroupHeader="True">More features</ContentControl>
+
+            <CheckBox form:FormPanel.IsStandalone="true">No label (Standalone)</CheckBox>
+            <TextBox  form:FormPanel.IsStandalone="true" Text="Another one"/>
+
+            <TextBlock Text="Just a box"/>
+            <TextBox/>
+            <TextBlock Text="Just a box"/>
+            <TextBox/>
+            <TextBlock Text="Just a box"/>
+            <TextBox/>
+
+        </form:FormPanel>
+
+    </Grid>
+</UserControl>

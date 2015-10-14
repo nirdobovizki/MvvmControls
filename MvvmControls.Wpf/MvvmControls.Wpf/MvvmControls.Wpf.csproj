@@ -46,6 +46,7 @@
     <Compile Include="AdornerLib\AdornedPlaceholder.cs" />
     <Compile Include="AdornerLib\Adorners.cs" />
     <Compile Include="AdornerLib\ControlAdorner.cs" />
+    <Compile Include="FormPanel\FormPanel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reflection\ReflectionControl.cs" />
     <Compile Include="SpeedDial\SpeedDialTicks.cs" />
