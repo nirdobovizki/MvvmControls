@@ -41,6 +41,31 @@ A style that makes a ProgressBar control look like a car's speed dial
 
 ![Speed dial style image](SpeedDialStyle.png)
 
+Validation Template
+---
+
+A template for showing validation errors, including error text and animated icon
+
+Note you have to leave space below the control for the exception message
+
+To apply:
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MvvmControls.Wpf;component/Validation/ValidationTemplate.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <Style TargetType="TextBox">
+                <Setter Property="Validation.ErrorTemplate" Value="{StaticResource ValidationTemplate}"/>
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+
+
+![Validation template image](ValidationTemplate.png)
+
+
 Licensing
 ---
 

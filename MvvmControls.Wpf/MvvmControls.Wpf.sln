@@ -1,11 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmControls.Wpf", "MvvmControls.Wpf\MvvmControls.Wpf.csproj", "{C8A9650B-6F94-49ED-9D1A-FFE1BA4EBC6A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmControls.Wpf.Demo", "MvvmControls.Wpf.Demo\MvvmControls.Wpf.Demo.csproj", "{3F3B6D36-0AA1-4744-8B32-0957D999C09A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5769A91A-198E-4B26-96E8-FBFB54FF540E}"
+	ProjectSection(SolutionItems) = preProject
+		..\README.md = ..\README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
