@@ -65,6 +65,13 @@ To apply:
 
 ![Validation template image](ValidationTemplate.png)
 
+Is Busy Decoratot
+---
+A frame you put your controls into, if you set IsBusy to true all the controls will be disabled and a spinner will show on top of them (when IsBusy is false this control
+does not change the display in any way)
+
+![Is busy decorator image](IsBusyDecorator.png)
+
 
 Licensing
 ---
