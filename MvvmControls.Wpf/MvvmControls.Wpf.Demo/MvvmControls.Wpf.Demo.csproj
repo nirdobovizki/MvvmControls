@@ -61,6 +61,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Demos\IsBusyDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Demos\ReflectionControlDemo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -86,6 +90,9 @@
     </Compile>
     <Compile Include="Demos\FormPanelDemo.xaml.cs">
       <DependentUpon>FormPanelDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demos\IsBusyDemo.xaml.cs">
+      <DependentUpon>IsBusyDemo.xaml</DependentUpon>
     </Compile>
     <Compile Include="Demos\ReflectionControlDemo.xaml.cs">
       <DependentUpon>ReflectionControlDemo.xaml</DependentUpon>

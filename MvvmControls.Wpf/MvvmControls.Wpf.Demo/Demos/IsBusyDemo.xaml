@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="NirDobovizki.MvvmControls.Wpf.Demo.Demos.IsBusyDemo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:NirDobovizki.MvvmControls.Wpf.Demo.Demos"
+             xmlns:busy="clr-namespace:NirDobovizki.MvvmControls.IsBusy;assembly=MvvmControls.Wpf"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <CheckBox Margin="5" Name="CB">Busy?</CheckBox>
+        <GroupBox Header="Some controls" Grid.Row="1" Padding="5">
+            <busy:IsBusyDecorator IsBusy="{Binding ElementName=CB,Path=IsChecked}">
+                <StackPanel>
+                    <CheckBox>CheckBox</CheckBox>
+                    <TextBox Text="bla bla bla"/>
+                    <Button>a button</Button>
+                </StackPanel>
+            </busy:IsBusyDecorator>
+        </GroupBox>
+    </Grid>
+</UserControl>

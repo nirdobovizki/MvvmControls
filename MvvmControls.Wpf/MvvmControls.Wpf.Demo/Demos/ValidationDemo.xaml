@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:NirDobovizki.MvvmControls.Wpf.Demo.Demos"
+             xmlns:validation="clr-namespace:NirDobovizki.MvvmControls.Validation;assembly=MvvmControls.Wpf"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300"
              DataContext="{Binding RelativeSource={RelativeSource Self}}">
@@ -18,15 +19,19 @@
         </ResourceDictionary>
     </UserControl.Resources>
     <Grid>
-        <StackPanel VerticalAlignment="Center" MaxWidth="150">
-            <TextBlock TextWrapping="Wrap">Type something here then click the other edit control to throw an exception</TextBlock>
-            <TextBox Text="{Binding AlwaysThrow, ValidatesOnExceptions=True}"/>
-            <Rectangle Height="20"/>
-            <TextBlock TextWrapping="Wrap">The text is the exception message, in case you are wandering</TextBlock>
-            <Rectangle Height="20"/>
-            <TextBlock TextWrapping="Wrap">This is here only so you have somewhere else to put focus:</TextBlock>
-            <TextBox />
+        <validation:ValidationFrame Name="VF" ValidatesOnExceptions="True">
+            <StackPanel VerticalAlignment="Center" MaxWidth="150">
+                <ItemsControl ItemsSource="{Binding ElementName=VF,Path=Errors}" DisplayMemberPath="ErrorContent"/>
+                <TextBlock TextWrapping="Wrap">Type something here then click the other edit control to throw an exception</TextBlock>
+                <TextBox Text="{Binding AlwaysThrow}"/>
+                <Rectangle Height="20"/>
+                <TextBlock TextWrapping="Wrap">The text is the exception message, in case you are wandering</TextBlock>
+                <Rectangle Height="20"/>
+                <TextBlock TextWrapping="Wrap">This is here only so you have somewhere else to put focus:</TextBlock>
+                <TextBox />
 
-        </StackPanel>
+            </StackPanel>
+
+        </validation:ValidationFrame>
     </Grid>
 </UserControl>
